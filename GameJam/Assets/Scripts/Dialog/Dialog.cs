@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Dialog : MonoBehaviour
@@ -7,22 +8,19 @@ public class Dialog : MonoBehaviour
     public struct DialogSettings
     {
         public string dialogText;
-        public int speechBubbleIdx;
-        public int fontIdx;
-        public Vector2 dialogVector;
+        public SpeechBubbleType speechBubbleIdx;
+        public FontType fontIdx;
+        public Vector3 dialogVector;
 
-        public DialogSettings(string _dialogText = "", int _speechBubbleIdx = 0, int _fondIdx = 0)
+        public DialogSettings(string _dialogText = "", SpeechBubbleType _speechBubbleIdx = 0, FontType _fondIdx = 0)
         {
             this.dialogText = _dialogText;
             this.speechBubbleIdx = _speechBubbleIdx;
             this.fontIdx = _fondIdx;
-            this.dialogVector = Vector2.zero;
+            this.dialogVector = Vector3.zero;
         }
     }
 
-    // TextBox
-    // DialogBox
-    // Font
-
-
+    public TextMeshProUGUI tmpText;
+    public Texture speechBubble;
 }
