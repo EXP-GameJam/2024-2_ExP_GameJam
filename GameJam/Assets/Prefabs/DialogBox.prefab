@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6667696445829887987}
   - component: {fileID: 8740841180435650658}
   - component: {fileID: 196493277135160979}
-  - component: {fileID: 2636976766924053148}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -135,21 +134,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &2636976766924053148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3449654497457750918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ca76264c71f5f441971d3ca19e9967f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AngleMultiplier: 1
-  SpeedMultiplier: 1
-  CurveScale: 10
 --- !u!1 &7261800556995013548
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,6 +145,7 @@ GameObject:
   - component: {fileID: 2443520451791084700}
   - component: {fileID: 5637048649324590337}
   - component: {fileID: 4328110342749568590}
+  - component: {fileID: 816506706587856458}
   m_Layer: 5
   m_Name: DialogBox
   m_TagString: Untagged
@@ -226,3 +211,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &816506706587856458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261800556995013548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab6ac377e5eec645b3d37d39130af39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tmpText: {fileID: 196493277135160979}
+  speechBubble: {fileID: 0}

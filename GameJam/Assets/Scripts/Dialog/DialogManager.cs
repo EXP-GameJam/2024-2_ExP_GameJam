@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
@@ -42,12 +43,19 @@ public class DialogManager : MonoBehaviour
         CreateDialog(new Dialog.DialogSettings());
     }
 
-    public List<Texture> dialogBoxImages;
+    public List<Sprite> speechBubbleImages;
     public List<TMP_FontAsset> Fonts;
     public GameObject dialogPrefab;
+    public GameObject dialogParent;
 
     public void CreateDialog(Dialog.DialogSettings dialogSettings)
     {
-        Instantiate(dialogPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        GameObject newGameObject = Instantiate(dialogPrefab, new Vector3(0, 0, 0), Quaternion.identity, dialogParent.transform);
+        newGameObject.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+
+        Dialog dialog = newGameObject.GetComponent<Dialog>();
+
+        dialog.GetComponent<Image>().sprite = speechBubbleImages[(int)dialogSettings.speechBubbleIdx];
+        dialog.tmpText.font = Fonts[(int)dialogSettings.fontIdx];
     }
 }

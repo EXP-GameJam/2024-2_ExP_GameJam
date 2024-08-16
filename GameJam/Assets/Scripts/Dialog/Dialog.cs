@@ -22,5 +22,34 @@ public class Dialog : MonoBehaviour
     }
 
     public TextMeshProUGUI tmpText;
-    public Texture speechBubble;
+
+    private string text;
+    private float textDelay = 0.1f;
+
+    private void Start()
+    {
+        text = tmpText.text.ToString();
+        tmpText.text = "";
+
+        StartCoroutine(textPrint(textDelay));
+    }
+
+    IEnumerator textPrint(float delay)
+    {
+        int count = 0;
+
+        while(count != text.Length)
+        {
+            if(count < text.Length)
+            {
+                tmpText.text += text[count].ToString();
+                count++;
+            }
+
+            yield return new WaitForSeconds(delay);
+        }
+    }
+
+
+
 }
