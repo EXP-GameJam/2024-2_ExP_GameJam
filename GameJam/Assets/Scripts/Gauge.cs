@@ -30,6 +30,23 @@ public class Gauge : MonoBehaviour
             currentHP -= (linearCoef * time + quadraticCoef * time * time);
             hpText.text = ((int)currentHP).ToString();
 
+            if (60 < currentHP && currentHP <= 100)
+            {
+
+            }
+            else if (30 < currentHP && currentHP <= 60)
+            {
+
+            }
+            else if (10 < currentHP && currentHP <= 30)
+            {
+
+            }
+            else if (0 < currentHP && currentHP <= 10)
+            {
+
+            }
+
             time += Time.deltaTime;
             yield return null;
         }
@@ -59,6 +76,9 @@ public class Gauge : MonoBehaviour
         if (time < 1) currentHP += 10;
         else if (1 < time && time < 3) currentHP += 5;
         else if (3 < time) currentHP += 2;
+        currentHP = Mathf.Min(currentHP, 100);
+
+        hpText.text = ((int)currentHP).ToString();
     }
 
     private void Awake()
