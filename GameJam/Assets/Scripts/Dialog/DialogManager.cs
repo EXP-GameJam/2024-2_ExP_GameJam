@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using TMPro.Examples;
+using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
@@ -39,15 +42,32 @@ public class DialogManager : MonoBehaviour
 
     private void Start()
     {
-        CreateDialog(new Dialog.DialogSettings());
+        // Text 예시
+        Dialog.DialogSettings dialogSettings = new Dialog.DialogSettings();
+        dialogSettings.dialogText = "제발 살려줘...";
+        dialogSettings.textDelay = 0.25f;
+        dialogSettings.isJitter = true;
+        CreateDialog(dialogSettings);
     }
 
-    public List<Texture> dialogBoxImages;
+    public List<Sprite> speechBubbleImages;
+    public List<AnimatorController> speechBubbleAnims;
     public List<TMP_FontAsset> Fonts;
     public GameObject dialogPrefab;
 
     public void CreateDialog(Dialog.DialogSettings dialogSettings)
     {
-        Instantiate(dialogPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        GameObject newGameObject = Instantiate(dialogPrefab, new Vector3(0, 0, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
+        newGameObject.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+        if(dialogSettings.isJitter)
+        {
+            GameObject childText = newGameObject.transform.GetChild(0).gameObject;
+            VertexJitter jitter = childText.AddComponent<VertexJitter>();
+        }
+
+        Dialog dialog = newGameObject.GetComponent<Dialog>();
+        dialog.GetComponent<Image>().sprite = speechBubbleImages[(int)dialogSettings.speechBubbleIdx];
+        dialog.tmpText.font = Fonts[(int)dialogSettings.fontIdx];
+        dialog.tmpText.text = dialogSettings.dialogText;
     }
 }

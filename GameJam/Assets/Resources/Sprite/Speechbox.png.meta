@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Speechbox_0
+      name: Speechbox_2_
       rect:
         serializedVersion: 2
         x: 0
@@ -144,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Speechbox_1
+      name: Speechbox_2_1
       rect:
         serializedVersion: 2
         x: 0
@@ -186,7 +186,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Speechbox_2
+      name: Speechbox_1_2
       rect:
         serializedVersion: 2
         x: 0
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Speechbox_2_2
+      name: Speechbox_0
       rect:
         serializedVersion: 2
         x: 0
@@ -238,11 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Speechbox_0: -338761156
-      Speechbox_1: -1098442477
+      Speechbox_0: -1473052709
       Speechbox_1_1: 638727085
-      Speechbox_2: 1636064465
-      Speechbox_2_2: -1473052709
+      Speechbox_1_2: 1636064465
+      Speechbox_2_: -338761156
+      Speechbox_2_1: -1098442477
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
