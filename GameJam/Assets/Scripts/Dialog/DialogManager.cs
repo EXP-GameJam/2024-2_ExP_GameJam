@@ -43,7 +43,7 @@ public class DialogManager : MonoBehaviour
     private void Start()
     {
         // Text 예시
-        Dialog.DialogSettings dialogSettings = new Dialog.DialogSettings();
+        DialogSettings dialogSettings = new DialogSettings();
         dialogSettings.dialogText = "나는 아무것도 몰라";
         dialogSettings.textDelay = 1.3f;
         dialogSettings.isJitter = false;
@@ -55,7 +55,7 @@ public class DialogManager : MonoBehaviour
     public List<TMP_FontAsset> Fonts;
     public GameObject dialogPrefab;
 
-    public void CreateDialog(Dialog.DialogSettings dialogSettings)
+    public void CreateDialog(DialogSettings dialogSettings)
     {
         GameObject newGameObject = Instantiate(dialogPrefab, new Vector3(0, 0, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
         newGameObject.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
