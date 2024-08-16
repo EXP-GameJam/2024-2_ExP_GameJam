@@ -47,11 +47,11 @@ public class DialogManager : MonoBehaviour
         dialogSettings.dialogText = "¡¶πﬂ ªÏ∑¡¡‡...";
         dialogSettings.textDelay = 0.25f;
         dialogSettings.isJitter = true;
+        dialogSettings.speechBubbleIdx = SpeechBubbleType.Panic;
         CreateDialog(dialogSettings);
     }
 
     public List<Sprite> speechBubbleImages;
-    public List<AnimatorController> speechBubbleAnims;
     public List<TMP_FontAsset> Fonts;
     public GameObject dialogPrefab;
 
@@ -65,8 +65,11 @@ public class DialogManager : MonoBehaviour
             VertexJitter jitter = childText.AddComponent<VertexJitter>();
         }
 
+        Animator speechBubbleAnims = newGameObject.GetComponent<Animator>();
+        speechBubbleAnims.SetInteger("SpeechBubbleIdx", (int)dialogSettings.speechBubbleIdx);
+
         Dialog dialog = newGameObject.GetComponent<Dialog>();
-        dialog.GetComponent<Image>().sprite = speechBubbleImages[(int)dialogSettings.speechBubbleIdx];
+        //dialog.GetComponent<Image>().sprite = speechBubbleImages[(int)dialogSettings.speechBubbleIdx];
         dialog.tmpText.font = Fonts[(int)dialogSettings.fontIdx];
         dialog.tmpText.text = dialogSettings.dialogText;
     }

@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 5637048649324590337}
   - component: {fileID: 4328110342749568590}
   - component: {fileID: 816506706587856458}
-  - component: {fileID: 3211676295238780513}
+  - component: {fileID: 1307232849888493450}
   m_Layer: 5
   m_Name: DialogBox
   m_TagString: Untagged
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tmpText: {fileID: 196493277135160979}
---- !u!95 &3211676295238780513
+--- !u!95 &1307232849888493450
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -235,7 +235,7 @@ Animator:
   m_GameObject: {fileID: 7261800556995013548}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01a88d8363eb3624b90b6203fe836cde, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
