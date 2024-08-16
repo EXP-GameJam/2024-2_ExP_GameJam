@@ -22,3 +22,11 @@ public enum SpeechBubbleType
     Panic,
     NumofDialog,
 }
+
+public enum ColorType
+{
+    Red,
+    Blue,
+    Black,
+    NumofColor
+}

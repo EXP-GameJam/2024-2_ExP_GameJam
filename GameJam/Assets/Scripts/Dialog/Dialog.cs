@@ -12,8 +12,9 @@ public class DialogSettings
     public Vector3 dialogVector;
     public float textDelay;
     public bool isJitter;
+    public ColorType color;
 
-    public DialogSettings(string _dialogText = "", SpeechBubbleType _speechBubbleIdx = 0, FontType _fondIdx = 0, float _textDelay = 0.1f, bool _isJitter = false)
+    public DialogSettings(string _dialogText = "", SpeechBubbleType _speechBubbleIdx = 0, FontType _fondIdx = 0, float _textDelay = 0.1f, bool _isJitter = false, ColorType _color = 0)
     {
         this.dialogText = _dialogText;
         this.speechBubbleIdx = _speechBubbleIdx;
@@ -21,6 +22,7 @@ public class DialogSettings
         this.dialogVector = Vector3.zero;
         this.textDelay = _textDelay;
         this.isJitter = _isJitter;
+        this.color = _color;
     }
 }
 
