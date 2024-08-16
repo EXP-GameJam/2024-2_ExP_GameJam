@@ -57,7 +57,7 @@ public class Gauge : MonoBehaviour
     public void Heal(float time)
     {
         if (time < 1) currentHP += 10;
-        else if (1 < time && time > 3) currentHP += 5;
+        else if (1 < time && time < 3) currentHP += 5;
         else if (3 < time) currentHP += 2;
     }
 
