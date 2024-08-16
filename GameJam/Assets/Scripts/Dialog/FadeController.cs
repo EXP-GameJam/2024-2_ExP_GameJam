@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FadeController : MonoBehaviour
@@ -51,6 +52,19 @@ public class FadeController : MonoBehaviour
 
 		img.color = tempColor;
 
-		CutSceneManager.Instance.ShowNextScene();
+		string nowSceneName = SceneManager.GetActiveScene().name;
+		if (nowSceneName == "CutSceneLevel")
+        {
+			CutSceneManager.Instance.ShowNextScene();
+			if(CutSceneManager.Instance.currentSceneIdx == 11)
+            {
+				SceneManager.LoadScene("Main");
+            }
+		}
+		else if(nowSceneName == "StartScene")
+        {
+			SceneManager.LoadScene("CutSceneLevel");
+        }
+
 	}
 }

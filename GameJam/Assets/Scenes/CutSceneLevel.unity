@@ -387,6 +387,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ee11f2cdb8acd241849c8e450e6ba2f, type: 2}
   - {fileID: 11400000, guid: 2e8dafe9aad1f8a48a76a1384e479b4e, type: 2}
   dialogPrefab: {fileID: 7261800556995013548, guid: 7316879a9f2b1f342a3c7d679d1e5478, type: 3}
+  dialogParent: {fileID: 0}
+  color:
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
 --- !u!4 &822260576
 Transform:
   m_ObjectHideFlags: 0
@@ -611,12 +616,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutSceneSettings:
-  - autoSkipTime: 5
+  - autoSkipTime: 4
     canSkipTime: 0.3
     isNextFade: 0
     isNowFade: 1
     cutSceneImage: {fileID: 21300000, guid: dc003d8c296af5a45950758380ec17db, type: 3}
-  - autoSkipTime: 5
+  - autoSkipTime: 1
     canSkipTime: 0.3
     isNextFade: 0
     isNowFade: 0
@@ -646,6 +651,26 @@ MonoBehaviour:
     isNextFade: 1
     isNowFade: 0
     cutSceneImage: {fileID: 21300000, guid: 2371c49430e15b64fad5e72715780d86, type: 3}
+  - autoSkipTime: 7
+    canSkipTime: 1
+    isNextFade: 1
+    isNowFade: 1
+    cutSceneImage: {fileID: 21300000, guid: 2891d6de2cd820345acbaeaf71e65c78, type: 3}
+  - autoSkipTime: 7
+    canSkipTime: 1
+    isNextFade: 1
+    isNowFade: 1
+    cutSceneImage: {fileID: 21300000, guid: 7e4cb2a38e301d94097193fc9e059b63, type: 3}
+  - autoSkipTime: 7
+    canSkipTime: 1
+    isNextFade: 1
+    isNowFade: 1
+    cutSceneImage: {fileID: 21300000, guid: 8d6f9369e7d4bab48917cb025ca7da4e, type: 3}
+  - autoSkipTime: 7
+    canSkipTime: 1
+    isNextFade: 1
+    isNowFade: 1
+    cutSceneImage: {fileID: 21300000, guid: bee30176736e7ee4e833627d328a02d5, type: 3}
   cutScenePrefab: {fileID: 5938335699295086512, guid: c7685fe6c3287cb4eaca866b5b48db75, type: 3}
   fader: {fileID: 0}
   BlackPanel: {fileID: 1041069736}
