@@ -5,15 +5,18 @@ using UnityEngine.EventSystems;
 
 public class OnHeadClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    public Gauge gauge;
+    public delegate void headDown();
+    public static event headDown HeadDown;
+    public delegate void headUp();
+    public static event headUp HeadUp;
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        gauge.PointerDown();
+        HeadDown();
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        gauge.PointerUp();
+        HeadUp();
     }
 }
