@@ -12,8 +12,12 @@ public class Gauge : MonoBehaviour
     public int truthMinHP;
     public int truthMaxHP;
 
-    public float linearCoef = 0.01f;
-    public float quadraticCoef = 0.001f;
+    public static bool isFirstTry = true;
+    public static bool isFail = false;
+    public static bool isSuccess = false;
+
+    public float linear = 0.004f;
+    public float quadratic = 0.0005f;
 
     private void Awake()
     {
@@ -28,8 +32,10 @@ public class Gauge : MonoBehaviour
     public void SetGauge()
     {
         currentHP = 100;
-        truthMinHP = Random.Range(0, 22);
-        truthMaxHP = truthMinHP + 8;
+        truthMinHP = 0;// Random.Range(0, 16);
+        truthMaxHP = truthMinHP + 5;
+        isFail = false;
+        isSuccess = false;
 
         PrintHP();
     }
@@ -40,7 +46,7 @@ public class Gauge : MonoBehaviour
         time = 0;
         while (true)
         {
-            currentHP -= (linearCoef * time + quadraticCoef * time * time);
+            currentHP -= (linear * time + quadratic * time * time);
             PrintHP();
 
             time += Time.deltaTime;
@@ -55,25 +61,29 @@ public class Gauge : MonoBehaviour
         StopAllCoroutines();
         if (currentHP < 0)
         {
-            currentHP = -1;
+            isFail = true;
             hpText.text = "Died";
             OnHeadClick.Disable();
         }
 
         else if (truthMinHP < currentHP && currentHP < truthMaxHP)
         {
+            isSuccess = true;
             hpText.text = "Success";
             OnHeadClick.Disable();
+            if (isFirstTry) { } //Ending
         }
 
         else Heal(time);
+
+        isFirstTry = false;
     }
 
     public void Heal(float time)
     {
-        if (time < 1) currentHP += 10;
-        else if (1 < time && time < 3) currentHP += 5;
-        else if (3 < time) currentHP += 2;
+        if (time < 1) currentHP += 15;
+        else if (1 < time && time < 3) currentHP += 8;
+        else if (3 < time) currentHP += 4;
         currentHP = Mathf.Min(currentHP, 100);
 
         PrintHP();

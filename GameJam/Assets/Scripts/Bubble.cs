@@ -34,10 +34,10 @@ public class Bubble : MonoBehaviour
     public float GetBPS()
     {
         float hp = Gauge.currentHP;
-        if (60 < hp && hp <= 100) return 5;
-        else if (30 < hp && hp <= 60) return 10;
-        else if (10 < hp && hp <= 30) return 15;
-        else if (0 < hp && hp <= 10) return 20;
+        if (75 < hp && hp <= 100) return Random.Range(2, 4);
+        else if (50 < hp && hp <= 75) return Random.Range(5, 9);
+        else if (25 < hp && hp <= 50) return Random.Range(10, 16);
+        else if (0 < hp && hp <= 25) return Random.Range(20, 26);
 
         else return 0;
     }

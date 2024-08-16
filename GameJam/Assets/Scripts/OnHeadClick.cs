@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -13,6 +14,16 @@ public class OnHeadClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public static bool isDisabled = false;
     public static bool isPaused = false;
     public static bool isDowned = false;
+
+    private void Awake()
+    {
+        StartCoroutine(Timer());
+    }
+
+    public static void Enable()
+    {
+        isDisabled = false;
+    }
 
     public static void Disable()
     {
@@ -38,7 +49,7 @@ public class OnHeadClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public IEnumerator Timer()
     {
         isPaused = true;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         isPaused = false;
     }
 }
