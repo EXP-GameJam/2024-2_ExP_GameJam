@@ -38,9 +38,11 @@ public class DialogManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+
+        OnHeadClick.HeadDown += HeadDown;
     }
 
-    private void Start()
+    /*private void Start()
     {
         // Text ¿¹½Ã
         DialogSettings dialogSettings = new DialogSettings();
@@ -49,16 +51,24 @@ public class DialogManager : MonoBehaviour
         dialogSettings.isJitter = false;
         dialogSettings.speechBubbleIdx = SpeechBubbleType.Normal;
         CreateDialog(dialogSettings);
-    }
+    }*/
+
+
+
+    public void HeadDown() => Destroy(newGameObject);
+
 
     public List<Sprite> speechBubbleImages;
     public List<TMP_FontAsset> Fonts;
     public GameObject dialogPrefab;
+    public GameObject dialogParent;
+    public Color[] color = { Color.blue, Color.red, Color.black };
 
+    GameObject newGameObject;
     public void CreateDialog(DialogSettings dialogSettings)
     {
-        GameObject newGameObject = Instantiate(dialogPrefab, new Vector3(0, 0, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
-        newGameObject.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+        newGameObject = Instantiate(dialogPrefab, new Vector3(0, 0, 0), Quaternion.identity, dialogParent.transform);
+        newGameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -500);
         if(dialogSettings.isJitter)
         {
             GameObject childText = newGameObject.transform.GetChild(0).gameObject;
@@ -72,5 +82,6 @@ public class DialogManager : MonoBehaviour
         dialog.tmpText.font = Fonts[(int)dialogSettings.fontIdx];
         dialog.textDelay = dialogSettings.textDelay;
         dialog.tmpText.text = dialogSettings.dialogText;
+        dialog.tmpText.color = color[(int)dialogSettings.color];
     }
 }
