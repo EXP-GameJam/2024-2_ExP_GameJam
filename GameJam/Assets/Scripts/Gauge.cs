@@ -55,12 +55,15 @@ public class Gauge : MonoBehaviour
         StopAllCoroutines();
         if (currentHP < 0)
         {
+            currentHP = -1;
             hpText.text = "Died";
+            OnHeadClick.Disable();
         }
 
         else if (truthMinHP < currentHP && currentHP < truthMaxHP)
         {
             hpText.text = "Success";
+            OnHeadClick.Disable();
         }
 
         else Heal(time);
