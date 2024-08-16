@@ -17,8 +17,9 @@ public enum SpeechBubbleType
 
 public enum ColorType
 {
-    Red,
-    Blue,
     Black,
+    Red,
+    Purple,
+    Blue,
     NumofColor
 }

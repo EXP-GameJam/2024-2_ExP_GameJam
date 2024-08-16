@@ -47,10 +47,10 @@ public class DialogManager : MonoBehaviour
 
 
     public List<Sprite> speechBubbleImages;
-    public List<TMP_FontAsset> Fonts;
+    public TMP_FontAsset DNFFont;
     public GameObject dialogPrefab;
     public GameObject dialogParent;
-    public Color[] color = { Color.blue, Color.red, Color.black };
+    public Color[] color = { new Color(0, 0, 0), new Color(0, 24, 103), new Color(112, 0, 112), new Color(156, 0, 40)  };
 
     GameObject newGameObject;
     public void CreateDialog(DialogSettings dialogSettings)
@@ -65,7 +65,7 @@ public class DialogManager : MonoBehaviour
         speechBubbleAnims.SetInteger("SpeechBubbleIdx", (int)dialogSettings.speechBubbleIdx);
 
         Dialog dialog = newGameObject.GetComponent<Dialog>();
-        dialog.tmpText.font = Fonts[2];
+        dialog.tmpText.font = DNFFont;
         dialog.textDelay = 0.15f;
         dialog.tmpText.text = dialogSettings.dialogText;
         dialog.tmpText.color = color[(int)dialogSettings.color];
