@@ -11,13 +11,17 @@ public class Dialog : MonoBehaviour
         public SpeechBubbleType speechBubbleIdx;
         public FontType fontIdx;
         public Vector3 dialogVector;
+        public float textDelay;
+        public bool isJitter;
 
-        public DialogSettings(string _dialogText = "", SpeechBubbleType _speechBubbleIdx = 0, FontType _fondIdx = 0)
+        public DialogSettings(string _dialogText = "", SpeechBubbleType _speechBubbleIdx = 0, FontType _fondIdx = 0, float _textDelay = 0.1f, bool _isJitter = false)
         {
             this.dialogText = _dialogText;
             this.speechBubbleIdx = _speechBubbleIdx;
             this.fontIdx = _fondIdx;
             this.dialogVector = Vector3.zero;
+            this.textDelay = _textDelay;
+            this.isJitter = _isJitter;
         }
     }
 
