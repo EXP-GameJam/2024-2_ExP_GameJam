@@ -1,20 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Collections;
 using UnityEngine;
 
 public class Gauge : MonoBehaviour
 {
     public TMP_Text hpText;
 
-    public float currentHP;
+    public static float currentHP;
     public int truthMinHP;
     public int truthMaxHP;
 
     public float linearCoef = 0.01f;
     public float quadraticCoef = 0.001f;
 
-    public bool headUpTrigger;
+    private void Awake()
+    {
+        OnHeadClick.HeadDown += HeadDown;
+        OnHeadClick.HeadUp += HeadUp;
+
+        SetGauge();
+    }
+
+    public void HeadDown() => StartCoroutine(DecreaseHP());
+    public void HeadUp() => StopHP();
     public void SetGauge()
     {
         currentHP = 100;
@@ -24,58 +34,35 @@ public class Gauge : MonoBehaviour
         PrintHP();
     }
 
-    public IEnumerator HeadDown()
+    public float time = 0;
+    public IEnumerator DecreaseHP()
     {
-        float time = 0;
-        while (!headUpTrigger)
+        time = 0;
+        while (true)
         {
             currentHP -= (linearCoef * time + quadraticCoef * time * time);
             PrintHP();
 
-            GetBubble();
-
             time += Time.deltaTime;
             yield return null;
         }
+    }
+
+    public void PrintHP() => hpText.text = ((int)currentHP).ToString();
+
+    public void StopHP()
+    {
+        StopAllCoroutines();
         if (currentHP < 0)
         {
             hpText.text = "Died";
         }
-        else HeadUp(time);
-    }
 
-    public void PrintHP() => hpText.text = ((int)currentHP).ToString();
-    public void PointerDown() => StartCoroutine(HeadDown());
-    public void PointerUp() => headUpTrigger = true;
-
-    public void GetBubble()
-    {
-        if (60 < currentHP && currentHP <= 100)
-        {
-
-        }
-        else if (30 < currentHP && currentHP <= 60)
-        {
-
-        }
-        else if (10 < currentHP && currentHP <= 30)
-        {
-
-        }
-        else if (0 < currentHP && currentHP <= 10)
-        {
-
-        }
-    }
-
-    public void HeadUp(float time)
-    {
-        headUpTrigger = false;
-
-        if (truthMinHP < currentHP && currentHP < truthMaxHP)
+        else if (truthMinHP < currentHP && currentHP < truthMaxHP)
         {
             hpText.text = "Success";
         }
+
         else Heal(time);
     }
 
@@ -89,23 +76,4 @@ public class Gauge : MonoBehaviour
         PrintHP();
     }
 
-    public string GetMent()
-    {
-        if (currentHP < 0 && currentHP <= 10) return Ment.ment[0];
-        else if (currentHP < 10 && currentHP <= 20) return Ment.ment[1];
-        else if (currentHP < 20 && currentHP <= 30) return Ment.ment[2];
-        else if (currentHP < 30 && currentHP <= 40) return Ment.ment[3];
-        else if (currentHP < 40 && currentHP <= 50) return Ment.ment[4];
-        else if (currentHP < 50 && currentHP <= 60) return Ment.ment[5];
-        else if (currentHP < 60 && currentHP <= 70) return Ment.ment[6];
-        else if (currentHP < 70 && currentHP <= 80) return Ment.ment[7];
-        else if (currentHP < 80 && currentHP <= 90) return Ment.ment[8];
-        else if (currentHP < 90 && currentHP <= 100) return Ment.ment[9];
-        else return null;
-    }
-
-    private void Awake()
-    {
-        SetGauge();
-    }
 }
