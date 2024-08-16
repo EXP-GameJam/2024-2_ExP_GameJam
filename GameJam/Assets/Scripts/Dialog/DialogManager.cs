@@ -43,12 +43,14 @@ public class DialogManager : MonoBehaviour
     private void Start()
     {
         // Text 예시
+        /*
         DialogSettings dialogSettings = new DialogSettings();
         dialogSettings.dialogText = "나는 아무것도 몰라";
         dialogSettings.textDelay = 1.3f;
         dialogSettings.isJitter = false;
         dialogSettings.speechBubbleIdx = SpeechBubbleType.Normal;
         CreateDialog(dialogSettings);
+        */
     }
 
     public List<Sprite> speechBubbleImages;

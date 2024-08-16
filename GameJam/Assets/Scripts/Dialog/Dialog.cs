@@ -22,35 +22,10 @@ public class DialogSettings
         this.textDelay = _textDelay;
         this.isJitter = _isJitter;
     }
-
-    public DialogSettings()
-    {
-
-    }
 }
 
 public class Dialog : MonoBehaviour
 {
-    public struct DialogSettings
-    {
-        public string dialogText;
-        public SpeechBubbleType speechBubbleIdx;
-        public FontType fontIdx;
-        public Vector3 dialogVector;
-        public float textDelay;
-        public bool isJitter;
-
-        public DialogSettings(string _dialogText = "", SpeechBubbleType _speechBubbleIdx = 0, FontType _fondIdx = 0, float _textDelay = 0.1f, bool _isJitter = false)
-        {
-            this.dialogText = _dialogText;
-            this.speechBubbleIdx = _speechBubbleIdx;
-            this.fontIdx = _fondIdx;
-            this.dialogVector = Vector3.zero;
-            this.textDelay = _textDelay;
-            this.isJitter = _isJitter;
-        }
-    }
-
     public TextMeshProUGUI tmpText;
     public float textDelay;
     private string text;
@@ -78,7 +53,4 @@ public class Dialog : MonoBehaviour
             yield return new WaitForSeconds(delay);
         }
     }
-
-
-
 }

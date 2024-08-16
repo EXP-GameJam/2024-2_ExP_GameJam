@@ -4,41 +4,64 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
+[System.Serializable]
+public class CutSceneSettings
+{
+    public float autoSkipTime;
+    public float canSkipTime;
+    public bool isNextFade;
+    public bool isNowFade;
+    public Sprite cutSceneImage;
+}
+
 public class CutScene : MonoBehaviour, IPointerClickHandler
 {
     private float flowTime = 0.0f;
+    private bool isSkipped = false;
 
-    private float autoSkipTime;
-    private float canSkipTime;
-
-    public void InitializeCutScene(float _autoSkipTime, float _canSkipTime)
-    {
-        autoSkipTime = _autoSkipTime;
-        canSkipTime = _canSkipTime;
-    }
+    public bool isNowFade;
+    public bool isNextFade;
+    public float autoSkipTime;
+    public float canSkipTime;
 
     private void Update()
     {
         flowTime += Time.deltaTime;
 
-        if(flowTime >= autoSkipTime)
+        if(flowTime >= autoSkipTime && !isSkipped)
         {
             Skip();
+            isSkipped = true;
         }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Click");
-        if(flowTime >= canSkipTime)
+        if(flowTime >= canSkipTime && !isSkipped)
         {
             Skip();
+            isSkipped = true;
+        }
+    }
+
+    private void Start()
+    {
+        if(isNowFade)
+        {
+            CutSceneManager.Instance.fader.FadeIn(0.5f);
         }
     }
 
     private void Skip()
     {
-        Debug.Log("Skip");
+        if(isNextFade)
+        {
+            CutSceneManager.Instance.fader.FadeOut(0.5f);
+        }
+        else
+        {
+            CutSceneManager.Instance.ShowNextScene();
+        }
     }
-
 }
