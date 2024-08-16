@@ -42,19 +42,6 @@ public class DialogManager : MonoBehaviour
         OnHeadClick.HeadDown += HeadDown;
     }
 
-    /*private void Start()
-    {
-        // Text ����
-        /*
-        DialogSettings dialogSettings = new DialogSettings();
-        dialogSettings.dialogText = "���� �ƹ��͵� ����";
-        dialogSettings.textDelay = 1.3f;
-        dialogSettings.isJitter = false;
-        dialogSettings.speechBubbleIdx = SpeechBubbleType.Normal;
-        CreateDialog(dialogSettings);
-    }*/
-
-
 
     public void HeadDown() => Destroy(newGameObject);
 
@@ -70,18 +57,16 @@ public class DialogManager : MonoBehaviour
     {
         newGameObject = Instantiate(dialogPrefab, new Vector3(0, 0, 0), Quaternion.identity, dialogParent.transform);
         newGameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -500);
-        if(dialogSettings.isJitter)
-        {
-            GameObject childText = newGameObject.transform.GetChild(0).gameObject;
-            VertexJitter jitter = childText.AddComponent<VertexJitter>();
-        }
+        
+        GameObject childText = newGameObject.transform.GetChild(0).gameObject;
+        VertexJitter jitter = childText.AddComponent<VertexJitter>();
 
         Animator speechBubbleAnims = newGameObject.GetComponent<Animator>();
         speechBubbleAnims.SetInteger("SpeechBubbleIdx", (int)dialogSettings.speechBubbleIdx);
 
         Dialog dialog = newGameObject.GetComponent<Dialog>();
-        dialog.tmpText.font = Fonts[(int)dialogSettings.fontIdx];
-        dialog.textDelay = dialogSettings.textDelay;
+        dialog.tmpText.font = Fonts[2];
+        dialog.textDelay = 0.15f;
         dialog.tmpText.text = dialogSettings.dialogText;
         dialog.tmpText.color = color[(int)dialogSettings.color];
     }

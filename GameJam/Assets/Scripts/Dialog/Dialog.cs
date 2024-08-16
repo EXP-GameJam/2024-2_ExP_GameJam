@@ -8,20 +8,12 @@ public class DialogSettings
 {
     public string dialogText;
     public SpeechBubbleType speechBubbleIdx;
-    public FontType fontIdx;
-    public Vector3 dialogVector;
-    public float textDelay;
-    public bool isJitter;
     public ColorType color;
 
-    public DialogSettings(string _dialogText = "", SpeechBubbleType _speechBubbleIdx = 0, FontType _fondIdx = 0, float _textDelay = 0.1f, bool _isJitter = false, ColorType _color = 0)
+    public DialogSettings(string _dialogText = "", SpeechBubbleType _speechBubbleIdx = 0, ColorType _color = 0)
     {
         this.dialogText = _dialogText;
         this.speechBubbleIdx = _speechBubbleIdx;
-        this.fontIdx = _fondIdx;
-        this.dialogVector = Vector3.zero;
-        this.textDelay = _textDelay;
-        this.isJitter = _isJitter;
         this.color = _color;
     }
 }
@@ -37,10 +29,10 @@ public class Dialog : MonoBehaviour
         text = tmpText.text.ToString();
         tmpText.text = "";
 
-        StartCoroutine(textPrint(textDelay));
+        StartCoroutine(TextPrint(textDelay));
     }
 
-    IEnumerator textPrint(float delay)
+    IEnumerator TextPrint(float delay)
     {
         int count = 0;
 

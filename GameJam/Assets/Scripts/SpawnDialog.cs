@@ -7,17 +7,17 @@ public class SpawnDialog : MonoBehaviour
 
     public static DialogSettings[] dialogList =
     {
-        new DialogSettings("자기야 왜 그래...", SpeechBubbleType.Normal, FontType.Yurum, 0.1f, true, ColorType.Black),
-        new DialogSettings("절대 말 안 해!", SpeechBubbleType.Normal, FontType.Yurum, 0.1f, true, ColorType.Black),
-        new DialogSettings("난 잘못한 거 없어!", SpeechBubbleType.Normal, FontType.Yurum, 0.1f, true, ColorType.Black),
-        new DialogSettings("그냥 친구라니까!", SpeechBubbleType.Normal, FontType.Yurum, 0.1f, true, ColorType.Black),
-        new DialogSettings("이 손 놔 줘!!", SpeechBubbleType.Hard, FontType.Yurum, 0.1f, true, ColorType.Blue),
-        new DialogSettings("숨 막혀 숨!!", SpeechBubbleType.Hard, FontType.Yurum, 0.1f, true, ColorType.Blue),
-        new DialogSettings("헉 헉 미안해!!", SpeechBubbleType.Hard, FontType.Yurum, 0.1f, true, ColorType.Blue),
-        new DialogSettings("살려주세요!", SpeechBubbleType.Hard, FontType.Yurum, 0.1f, true, ColorType.Blue),
-        new DialogSettings("진짜 죽겠어", SpeechBubbleType.Panic, FontType.Yurum, 0.1f, true, ColorType.Red),
-        new DialogSettings("다 말할게!!!", SpeechBubbleType.Panic, FontType.Yurum, 0.1f, true, ColorType.Red),
-        new DialogSettings("네 친구 미영이랑 갔어", SpeechBubbleType.Normal, FontType.Yurum, 0.1f, true, ColorType.Black),
+        new DialogSettings("자기야 왜 그래...", SpeechBubbleType.Normal, ColorType.Black),
+        new DialogSettings("절대 말 안 해!", SpeechBubbleType.Normal, ColorType.Black),
+        new DialogSettings("난 잘못한 거 없어!", SpeechBubbleType.Normal, ColorType.Black),
+        new DialogSettings("그냥 친구라니까!", SpeechBubbleType.Normal, ColorType.Black),
+        new DialogSettings("이 손 놔 줘!!", SpeechBubbleType.Hard, ColorType.Blue),
+        new DialogSettings("숨 막혀 숨!!", SpeechBubbleType.Hard, ColorType.Blue),
+        new DialogSettings("헉 헉 미안해!!", SpeechBubbleType.Hard, ColorType.Blue),
+        new DialogSettings("살려주세요!", SpeechBubbleType.Hard, ColorType.Blue),
+        new DialogSettings("진짜 죽겠어", SpeechBubbleType.Panic, ColorType.Red),
+        new DialogSettings("다 말할게!!!", SpeechBubbleType.Panic, ColorType.Red),
+        new DialogSettings("네 친구 미영이랑 갔어", SpeechBubbleType.Normal, ColorType.Black),
     };
 
     private void Awake()
