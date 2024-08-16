@@ -25,7 +25,7 @@ public class Bubble : MonoBehaviour
             GameObject bubble = Instantiate(bubblePrefab, parent.transform);
 
             bubble.transform.localPosition = new Vector2(Random.Range(-200, 200), Random.Range(-200, 200));
-            Destroy(bubble, 0.5f);
+            Destroy(bubble, 0.666f);
 
             yield return new WaitForSeconds(1f/bps);
         }
