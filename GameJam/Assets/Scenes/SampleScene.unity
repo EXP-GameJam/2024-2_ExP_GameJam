@@ -173,7 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c4499ebb022b1408e8b150e380245a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gauge: {fileID: 1830029511}
 --- !u!114 &154268311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,12 +972,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpText: {fileID: 1625982830}
-  currentHP: 0
   truthMinHP: 0
   truthMaxHP: 0
   linearCoef: 0.01
   quadraticCoef: 0.001
-  headUpTrigger: 0
+  time: 0
 --- !u!1 &1981968578
 GameObject:
   m_ObjectHideFlags: 0
