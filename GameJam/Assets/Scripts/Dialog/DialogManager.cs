@@ -44,10 +44,10 @@ public class DialogManager : MonoBehaviour
     {
         // Text 예시
         Dialog.DialogSettings dialogSettings = new Dialog.DialogSettings();
-        dialogSettings.dialogText = "제발 살려줘...";
-        dialogSettings.textDelay = 0.25f;
-        dialogSettings.isJitter = true;
-        dialogSettings.speechBubbleIdx = SpeechBubbleType.Panic;
+        dialogSettings.dialogText = "나는 아무것도 몰라";
+        dialogSettings.textDelay = 1.3f;
+        dialogSettings.isJitter = false;
+        dialogSettings.speechBubbleIdx = SpeechBubbleType.Normal;
         CreateDialog(dialogSettings);
     }
 
@@ -69,8 +69,8 @@ public class DialogManager : MonoBehaviour
         speechBubbleAnims.SetInteger("SpeechBubbleIdx", (int)dialogSettings.speechBubbleIdx);
 
         Dialog dialog = newGameObject.GetComponent<Dialog>();
-        //dialog.GetComponent<Image>().sprite = speechBubbleImages[(int)dialogSettings.speechBubbleIdx];
         dialog.tmpText.font = Fonts[(int)dialogSettings.fontIdx];
+        dialog.textDelay = dialogSettings.textDelay;
         dialog.tmpText.text = dialogSettings.dialogText;
     }
 }
