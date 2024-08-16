@@ -52,9 +52,8 @@ public class Dialog : MonoBehaviour
     }
 
     public TextMeshProUGUI tmpText;
-
+    public float textDelay;
     private string text;
-    private float textDelay = 0.1f;
 
     private void Start()
     {
