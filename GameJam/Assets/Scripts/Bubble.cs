@@ -41,7 +41,8 @@ public class Bubble : MonoBehaviour
         if (75 < hp && hp <= 100) return Random.Range(2, 4);
         else if (50 < hp && hp <= 75) return Random.Range(5, 9);
         else if (25 < hp && hp <= 50) return Random.Range(10, 16);
-        else if (0 < hp && hp <= 25) return Random.Range(20, 26);
+        else if (5 < hp && hp <= 25) return Random.Range(20, 26);
+        else if (0 < hp && hp <= 5) return Random.Range(30, 36);
 
         else return 0;
     }

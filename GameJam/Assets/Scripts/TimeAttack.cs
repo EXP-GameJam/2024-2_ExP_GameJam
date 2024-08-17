@@ -30,7 +30,7 @@ public class TimeAttack : MonoBehaviour
 
     public IEnumerator Timer()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(9);
 
         Ddingdong.SetActive(true);
         AudioManager.Instance.SFXPlay("Door_Bell");
@@ -38,7 +38,7 @@ public class TimeAttack : MonoBehaviour
         Ddingdong.SetActive(false);
         CheckDisable();
 
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(11);
 
         Ddokddok1.SetActive(true);
         AudioManager.Instance.SFXPlay("Door_Knock");
@@ -53,7 +53,7 @@ public class TimeAttack : MonoBehaviour
         Ddokddok3.SetActive(false);
         CheckDisable();
 
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(11);
 
         Kwangkwang1.SetActive(true);
         AudioManager.Instance.SFXPlay("Door_Slam");
@@ -68,7 +68,7 @@ public class TimeAttack : MonoBehaviour
         StartCoroutine(Kwangkwang());
         StartCoroutine(KwangkwangSound());
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(8f);
         OnHeadClick.Disable();
         StopAllCoroutines();
         //gameover

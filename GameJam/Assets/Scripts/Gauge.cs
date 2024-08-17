@@ -34,7 +34,7 @@ public class Gauge : MonoBehaviour
     {
         currentHP = 100;
         truthMinHP = 0;// Random.Range(0, 16);
-        truthMaxHP = truthMinHP + 3;
+        truthMaxHP = truthMinHP + 5;
         isFail = false;
         isSuccess = false;
 
@@ -95,8 +95,8 @@ public class Gauge : MonoBehaviour
 
     public void Heal(float time)
     {
-        if (time < 1) currentHP += 15;
-        else if (1 < time && time < 3) currentHP += 8;
+        if (time < 1) currentHP += 10;
+        else if (1 < time && time < 3) currentHP += 6;
         else if (3 < time) currentHP += 4;
         currentHP = Mathf.Min(currentHP, 100);
 
