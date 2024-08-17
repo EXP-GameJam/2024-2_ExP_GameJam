@@ -10,11 +10,21 @@ public class TimeAttack : MonoBehaviour
     public GameObject KwangkwangPrefab1, KwangkwangPrefab2;
     public GameObject KwangkwangParent;
 
+    public static bool isDisabled = false;
+
+
     private void Awake()
     {
         StartCoroutine(Timer());
     }
-    
+
+    public static void Disable() => isDisabled = true;
+
+    public void CheckDisable()
+    {
+        if (isDisabled) StopAllCoroutines();
+    }
+
     public IEnumerator Timer()
     {
         yield return new WaitForSeconds(10);
@@ -23,6 +33,7 @@ public class TimeAttack : MonoBehaviour
         AudioManager.Instance.SFXPlay("Door_Bell");
         yield return new WaitForSeconds(2);
         Ddingdong.SetActive(false);
+        CheckDisable();
 
         yield return new WaitForSeconds(8);
 
@@ -37,6 +48,7 @@ public class TimeAttack : MonoBehaviour
         Ddokddok1.SetActive(false);
         Ddokddok2.SetActive(false);
         Ddokddok3.SetActive(false);
+        CheckDisable();
 
         yield return new WaitForSeconds(8);
 
@@ -47,6 +59,7 @@ public class TimeAttack : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         Kwangkwang1.SetActive(false);
         Kwangkwang2.SetActive(false);
+        CheckDisable();
 
         yield return new WaitForSeconds(3f); //25s
         StartCoroutine(Kwangkwang());
@@ -79,6 +92,7 @@ public class TimeAttack : MonoBehaviour
             GameObject kwangKwang = Instantiate(prefab, KwangkwangParent.transform);
             Destroy(kwangKwang, 1f);
 
+            CheckDisable();
             yield return new WaitForSeconds(0.3f);
         }
     }

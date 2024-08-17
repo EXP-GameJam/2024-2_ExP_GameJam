@@ -20,15 +20,9 @@ public class OnHeadClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         StartCoroutine(Timer());
     }
 
-    public static void Enable()
-    {
-        isDisabled = false;
-    }
+    public static void Enable() => isDisabled = false;
 
-    public static void Disable()
-    {
-        isDisabled = true;
-    }
+    public static void Disable() => isDisabled = true;
 
     public void OnPointerDown(PointerEventData eventData)
     {

@@ -64,6 +64,7 @@ public class Gauge : MonoBehaviour
             isFail = true;
             hpText.text = "Died";
             OnHeadClick.Disable();
+            TimeAttack.Disable();
         }
 
         else if (truthMinHP < currentHP && currentHP < truthMaxHP)
@@ -71,6 +72,7 @@ public class Gauge : MonoBehaviour
             isSuccess = true;
             hpText.text = "Success";
             OnHeadClick.Disable();
+            TimeAttack.Disable();
             if (isFirstTry) { } //Ending
         }
 
