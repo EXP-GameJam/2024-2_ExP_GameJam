@@ -28,8 +28,6 @@ public class EndingScript : MonoBehaviour
 
     private void Start()
     {
-        EndingNum = 1;
-
         EndingImageObject.GetComponent<Image>().sprite = EndingImages[EndingNum];
         EndingImageObject.SetActive(false);
         returnButton.gameObject.SetActive(false);
