@@ -26,7 +26,7 @@ public class Bubble : MonoBehaviour
             GameObject bubblePrefab = (Random.Range(0, 2) == 0 ? bigBubble : smallBubble);
             GameObject bubble = Instantiate(bubblePrefab, parent.transform);
 
-            bubble.transform.localPosition = new Vector2(Random.Range(-200, 200), Random.Range(-200, 200));
+            bubble.transform.localPosition = new Vector2(Random.Range(-300, 300), Random.Range(-350, 250));
             Destroy(bubble, 0.666f);
 
             AudioManager.Instance.SFXPlay("Bubble_Pop_0" + Random.Range(1, 4).ToString());
