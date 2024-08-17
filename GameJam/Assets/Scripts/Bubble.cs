@@ -27,6 +27,8 @@ public class Bubble : MonoBehaviour
             bubble.transform.localPosition = new Vector2(Random.Range(-200, 200), Random.Range(-200, 200));
             Destroy(bubble, 0.666f);
 
+            AudioManager.Instance.SFXPlay("Bubble_Pop_0" + Random.Range(1, 4).ToString());
+
             yield return new WaitForSeconds(1f/bps);
         }
     }

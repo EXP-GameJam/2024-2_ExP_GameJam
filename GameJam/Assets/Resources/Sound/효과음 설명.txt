@@ -1,11 +1,16 @@
-bubble_pop 3개 기포 랜덤으로 넣기
+Main
+
+Bubble_Pop 3개 기포 랜덤으로 넣기
+Death_Breath
+Door_Bell
 Door_Knock 시간 제한 생기면 처음에 안에 남자 있는지 보려고 노크하는 소리
 Door_Slam 대답 없자 다급하게 두드리는 소리
 Ending_Siren 경찰엔딩 내내 나오는 소리(반복)
 Ending_Spy 국정원엔딩 시작때 나오는 소리(한번)
 Ending_Wave 해피엔딩 내내 나오는 소리(반복)
-*기절엔딩은 04 브금 써주기(반복)
+Ending_Wasted *기절엔딩은 04 브금 써주기(반복)
 Text_Alarm 처음 컷신에서 채팅 하나 나올때마다 나옴
 UI_Button 버튼누르는 소리
 Water_In 물 담글 때 나는 소리
 Water_Out 꺼낼 때 나는 소리
+
