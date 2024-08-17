@@ -65,6 +65,5 @@ public class FadeController : MonoBehaviour
         {
 			SceneManager.LoadScene("CutSceneLevel");
         }
-
 	}
 }

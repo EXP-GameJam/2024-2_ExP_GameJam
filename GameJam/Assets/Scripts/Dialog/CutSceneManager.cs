@@ -34,7 +34,6 @@ public class CutSceneManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(gameObject);
     }
 
     public List<CutSceneSettings> cutSceneSettings;

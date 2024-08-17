@@ -225,37 +225,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &339089557
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 339089558}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &339089558
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339089557}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.234783, y: 354.38156, z: -4.8547573}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &478205855
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,10 +351,7 @@ MonoBehaviour:
   - {fileID: -338761156, guid: 119969edb3d405f42bbec2873877d081, type: 3}
   - {fileID: -1098442477, guid: 119969edb3d405f42bbec2873877d081, type: 3}
   - {fileID: 1636064465, guid: 119969edb3d405f42bbec2873877d081, type: 3}
-  Fonts:
-  - {fileID: 11400000, guid: affef6ed8df19644d9ed092e2abdcb24, type: 2}
-  - {fileID: 11400000, guid: 4ee11f2cdb8acd241849c8e450e6ba2f, type: 2}
-  - {fileID: 11400000, guid: 2e8dafe9aad1f8a48a76a1384e479b4e, type: 2}
+  DNFFont: {fileID: 0}
   dialogPrefab: {fileID: 7261800556995013548, guid: 7316879a9f2b1f342a3c7d679d1e5478, type: 3}
   dialogParent: {fileID: 0}
   color:
@@ -684,5 +650,4 @@ SceneRoots:
   - {fileID: 33323156}
   - {fileID: 1114029900}
   - {fileID: 822260576}
-  - {fileID: 339089558}
   - {fileID: 1210796933}

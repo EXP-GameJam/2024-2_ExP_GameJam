@@ -37,8 +37,6 @@ public class DialogManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(gameObject);
-
         OnHeadClick.HeadDown += HeadDown;
     }
 
