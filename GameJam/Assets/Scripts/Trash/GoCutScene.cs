@@ -11,6 +11,7 @@ public class GoCutScene : MonoBehaviour, IPointerClickHandler
 
     private void Start()
     {
+        AudioManager.Instance.AudioStop();
         AudioManager.Instance.AudioPlay("Main");
         BlackPanel.GetComponent<RectTransform>().transform.SetAsLastSibling();
         BlackPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);

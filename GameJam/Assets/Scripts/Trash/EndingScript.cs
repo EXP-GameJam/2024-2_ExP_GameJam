@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using static OnHeadClick;
 
 public class EndingScript : MonoBehaviour
@@ -79,26 +80,26 @@ public class EndingScript : MonoBehaviour
                 AudioManager.Instance.AudioPlay("Ending_Siren");
                 break;
             case 1:
-                AudioManager.Instance.SFXPlay("Ending_Wasted");
+                AudioManager.Instance.AudioPlay("Ending_Wasted");
                 break;
             case 2:
                 AudioManager.Instance.AudioPlay("Ending_Wave");
                 break;
             case 3:
-                AudioManager.Instance.AudioPlay("Ending_Spy");
+                AudioManager.Instance.SFXPlay("Ending_Spy");
                 break;
         }
     }
 
     public void MainButton()
     {
+
         TimeAttack.isDisabled = false;
         OnHeadClick.isDisabled = false;
         OnHeadClick.isPaused = false;
         OnHeadClick.isDowned = false;
         OnHeadClick.Rese222();
 
-        AudioManager.Instance.AudioStop();
         AudioManager.Instance.SFXPlay("UI_Button");
 
         SceneManager.LoadScene("StartScene");
