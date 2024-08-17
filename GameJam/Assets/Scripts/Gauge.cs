@@ -33,7 +33,7 @@ public class Gauge : MonoBehaviour
     {
         currentHP = 100;
         truthMinHP = 0;// Random.Range(0, 16);
-        truthMaxHP = truthMinHP + 5;
+        truthMaxHP = truthMinHP + 3;
         isFail = false;
         isSuccess = false;
 

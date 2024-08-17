@@ -35,6 +35,7 @@ public class OnHeadClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if (isDisabled) return;
         if (isPaused) return;
         HeadDown();
+        AudioManager.Instance.SFXPlay("Water_In");
         isDowned = true;
     }
 
@@ -42,6 +43,7 @@ public class OnHeadClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (!isDowned) return;
         HeadUp();
+        AudioManager.Instance.SFXPlay("Water_Out");
         isDowned = false;
         StartCoroutine(Timer());
     }
