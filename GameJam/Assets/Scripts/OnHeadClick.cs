@@ -20,6 +20,12 @@ public class OnHeadClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         StartCoroutine(Timer());
     }
 
+    public static void Rese222()
+    {
+        HeadDown = null;
+        HeadUp = null;
+    }
+
     public static void Enable() => isDisabled = false;
 
     public static void Disable() => isDisabled = true;

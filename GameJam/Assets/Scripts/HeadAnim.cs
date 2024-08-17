@@ -10,8 +10,20 @@ public class HeadAnim : MonoBehaviour
     {
         OnHeadClick.HeadDown += HeadDown;
         OnHeadClick.HeadUp += HeadUp;
+        anim = GameObject.Find("Face").GetComponent<Animator>();
     }
 
-    public void HeadDown() => anim.SetBool("isHeadDown", true);
-    public void HeadUp() { anim.SetBool("isHeadDown", false); anim.SetFloat("HP", Gauge.currentHP); }
+    public void HeadDown()
+    {
+        if(anim == null)
+            anim = GameObject.Find("Face").GetComponent<Animator>();
+        anim.SetBool("isHeadDown", true);
+    }
+    public void HeadUp()
+    {
+        if (anim == null)
+            anim = GameObject.Find("Face").GetComponent<Animator>();
+        anim.SetBool("isHeadDown", false);
+        anim.SetFloat("HP", Gauge.currentHP);
+    }
 }

@@ -9,18 +9,20 @@ public class Bubble : MonoBehaviour
 
     private void Awake()
     {
+        OnHeadClick.HeadDown -= HeadDown;
+        OnHeadClick.HeadUp -= HeadUp;
         OnHeadClick.HeadDown += HeadDown;
         OnHeadClick.HeadUp += HeadUp;
     }
 
-    public void HeadDown() => StartCoroutine(SpawnBubble());
+    public void HeadDown() {
+        StartCoroutine(SpawnBubble()); }
     public void HeadUp() => StopAllCoroutines();
     
     public IEnumerator SpawnBubble()
     {
         while (true) {
             float bps = GetBPS();
-
             GameObject bubblePrefab = (Random.Range(0, 2) == 0 ? bigBubble : smallBubble);
             GameObject bubble = Instantiate(bubblePrefab, parent.transform);
 

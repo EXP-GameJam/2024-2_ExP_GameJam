@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static OnHeadClick;
 
 public class EndingScript : MonoBehaviour
 {
@@ -77,6 +78,11 @@ public class EndingScript : MonoBehaviour
 
     public void MainButton()
     {
+        TimeAttack.isDisabled = false;
+        OnHeadClick.isDisabled = false;
+        OnHeadClick.isPaused = false;
+        OnHeadClick.isDowned = false;
+        OnHeadClick.Rese222();
         SceneManager.LoadScene("StartScene");
     }
 }
