@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EndingScript : MonoBehaviour
@@ -72,5 +73,10 @@ public class EndingScript : MonoBehaviour
 
         EndingImageObject.SetActive(true);
         returnButton.gameObject.SetActive(true);
+    }
+
+    public void MainButton()
+    {
+        SceneManager.LoadScene("StartScene");
     }
 }
