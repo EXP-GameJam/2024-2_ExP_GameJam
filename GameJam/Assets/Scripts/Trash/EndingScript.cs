@@ -8,7 +8,7 @@ public class EndingScript : MonoBehaviour
 {
     public TextMeshProUGUI tmpText;
     public float textDelay;
-    public int EndingNum;
+    public static int EndingNum;
     public GameObject BlackPanel;
     public FadeController fader;
     private string text;

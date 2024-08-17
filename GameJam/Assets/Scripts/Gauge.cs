@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Gauge : MonoBehaviour
 {
@@ -54,6 +55,8 @@ public class Gauge : MonoBehaviour
         }
     }
 
+    public void End() => SceneManager.LoadScene("EndingScene");
+
     public void PrintHP() => hpText.text = ((int)currentHP).ToString();
 
     public void StopHP()
@@ -65,6 +68,8 @@ public class Gauge : MonoBehaviour
             hpText.text = "Died";
             OnHeadClick.Disable();
             TimeAttack.Disable();
+            EndingScript.EndingNum = 1;
+            Invoke("End", 3);
         }
 
         else if (truthMinHP < currentHP && currentHP < truthMaxHP)
@@ -73,7 +78,14 @@ public class Gauge : MonoBehaviour
             hpText.text = "Success";
             OnHeadClick.Disable();
             TimeAttack.Disable();
-            if (isFirstTry) { } //Ending
+            if (isFirstTry) { EndingScript.EndingNum = 3;
+                Invoke("End", 3);
+            } //Ending
+            else
+            {
+                EndingScript.EndingNum = 2;
+                Invoke("End", 3);
+            }
         }
 
         else Heal(time);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TimeAttack : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class TimeAttack : MonoBehaviour
     public GameObject KwangkwangParent;
 
     public static bool isDisabled = false;
+
+    public void End() => SceneManager.LoadScene("EndingScene");
 
 
     private void Awake()
@@ -69,6 +72,9 @@ public class TimeAttack : MonoBehaviour
         OnHeadClick.Disable();
         StopAllCoroutines();
         //gameover
+        EndingScript.EndingNum = 0;
+
+        Invoke("End", 3);
     }
 
     public IEnumerator KwangkwangSound()
