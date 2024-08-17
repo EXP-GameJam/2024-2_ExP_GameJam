@@ -12,12 +12,9 @@ public class Blink : MonoBehaviour
 
     IEnumerator Blinking()
     {
-        Debug.Log("Blinking");
-
         Color savedColor = this.GetComponent<Image>().color;
         while (true)
         {
-            Debug.Log("Hello");
             Color CurrentColor = this.GetComponent<Image>().color;
             if(CurrentColor.a == 1.0f)
             {

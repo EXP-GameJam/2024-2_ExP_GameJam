@@ -63,6 +63,7 @@ public class FadeController : MonoBehaviour
 		}
 		else if(nowSceneName == "StartScene")
         {
+			AudioManager.Instance.AudioStop();
 			SceneManager.LoadScene("CutSceneLevel");
         }
 	}

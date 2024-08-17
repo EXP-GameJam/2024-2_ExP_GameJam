@@ -45,6 +45,11 @@ public class CutSceneManager : MonoBehaviour
 
     public GameObject CreateCutScene(CutSceneSettings cutSceneSetting)
     {
+        if(currentSceneIdx < 7 && currentSceneIdx > 0)
+        {
+            AudioManager.Instance.SFXPlay("Text_Alarm");
+        }
+
         GameObject newGameObject = Instantiate(cutScenePrefab, new Vector3(0, 0, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
         newGameObject.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
 

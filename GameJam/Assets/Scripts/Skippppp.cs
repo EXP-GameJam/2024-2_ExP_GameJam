@@ -20,5 +20,6 @@ public class Skippppp : MonoBehaviour
     public void Skipppppp()
     {
         SceneManager.LoadScene("Main");
+        AudioManager.Instance.SFXPlay("UI_Button");
     }
 }

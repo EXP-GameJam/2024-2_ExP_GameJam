@@ -606,47 +606,47 @@ MonoBehaviour:
     isNextFade: 0
     isNowFade: 0
     cutSceneImage: {fileID: 21300000, guid: e7f00630487123042b3e70ffb3298846, type: 3}
-  - autoSkipTime: 5
+  - autoSkipTime: 3
     canSkipTime: 0.3
     isNextFade: 0
     isNowFade: 0
     cutSceneImage: {fileID: 21300000, guid: 9671dc2ae5b0e9043add94ac15219d3f, type: 3}
-  - autoSkipTime: 5
+  - autoSkipTime: 3
     canSkipTime: 0.3
     isNextFade: 0
     isNowFade: 0
     cutSceneImage: {fileID: 21300000, guid: 963332bac3d1bb749b1e2082b5caeefb, type: 3}
-  - autoSkipTime: 5
+  - autoSkipTime: 3
     canSkipTime: 0.3
     isNextFade: 0
     isNowFade: 0
     cutSceneImage: {fileID: 21300000, guid: 5def8e53e492f80478ed1975315143da, type: 3}
-  - autoSkipTime: 5
+  - autoSkipTime: 1
     canSkipTime: 0.3
     isNextFade: 0
     isNowFade: 0
     cutSceneImage: {fileID: 21300000, guid: 9b16f26e02eeff14db313bb095807d22, type: 3}
-  - autoSkipTime: 5
+  - autoSkipTime: 3
     canSkipTime: 0.3
     isNextFade: 1
     isNowFade: 0
     cutSceneImage: {fileID: 21300000, guid: 2371c49430e15b64fad5e72715780d86, type: 3}
-  - autoSkipTime: 7
+  - autoSkipTime: 4
     canSkipTime: 1
     isNextFade: 1
     isNowFade: 1
     cutSceneImage: {fileID: 21300000, guid: 2891d6de2cd820345acbaeaf71e65c78, type: 3}
-  - autoSkipTime: 7
+  - autoSkipTime: 4
     canSkipTime: 1
     isNextFade: 1
     isNowFade: 1
     cutSceneImage: {fileID: 21300000, guid: 7e4cb2a38e301d94097193fc9e059b63, type: 3}
-  - autoSkipTime: 7
+  - autoSkipTime: 4
     canSkipTime: 1
     isNextFade: 1
     isNowFade: 1
     cutSceneImage: {fileID: 21300000, guid: 8d6f9369e7d4bab48917cb025ca7da4e, type: 3}
-  - autoSkipTime: 7
+  - autoSkipTime: 4
     canSkipTime: 1
     isNextFade: 1
     isNowFade: 1

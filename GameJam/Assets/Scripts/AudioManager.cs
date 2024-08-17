@@ -45,6 +45,11 @@ public class AudioManager : MonoBehaviour
         audioSource.Play();
     }
 
+    public void AudioStop()
+    {
+        audioSource.Stop();
+    }
+
     public void SFXPlay(string SFXName)
     {
         SFXSource.PlayOneShot(soundClip[SFXName]);

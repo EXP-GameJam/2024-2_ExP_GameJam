@@ -72,6 +72,22 @@ public class EndingScript : MonoBehaviour
 
         EndingImageObject.SetActive(true);
         returnButton.gameObject.SetActive(true);
+
+        switch(EndingNum)
+        {
+            case 0:
+                AudioManager.Instance.AudioPlay("Ending_Siren");
+                break;
+            case 1:
+                AudioManager.Instance.SFXPlay("Ending_Wasted");
+                break;
+            case 2:
+                AudioManager.Instance.AudioPlay("Ending_Wave");
+                break;
+            case 3:
+                AudioManager.Instance.AudioPlay("Ending_Spy");
+                break;
+        }
     }
 
     public void MainButton()
@@ -81,6 +97,10 @@ public class EndingScript : MonoBehaviour
         OnHeadClick.isPaused = false;
         OnHeadClick.isDowned = false;
         OnHeadClick.Rese222();
+
+        AudioManager.Instance.AudioStop();
+        AudioManager.Instance.SFXPlay("UI_Button");
+
         SceneManager.LoadScene("StartScene");
     }
 }
