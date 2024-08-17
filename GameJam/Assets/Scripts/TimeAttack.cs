@@ -91,10 +91,10 @@ public class TimeAttack : MonoBehaviour
         while (true)
         {
             GameObject prefab = (Random.Range(0, 2) == 0 ? KwangkwangPrefab1 : KwangkwangPrefab2);
-            float scale = Random.Range(4f, 6f);
+            float scale = Random.Range(10f, 7f);
 
             prefab.transform.localScale = new Vector2(scale, scale);
-            prefab.transform.localPosition = new Vector2(Random.Range(-230, 230), Random.Range(480, 590));
+            prefab.transform.localPosition = new Vector2(Random.Range(-400, 400), Random.Range(450, 800));
             GameObject kwangKwang = Instantiate(prefab, KwangkwangParent.transform);
             Destroy(kwangKwang, 1f);
 
