@@ -88,9 +88,7 @@ public class Gauge : MonoBehaviour
             }
         }
 
-        else Heal(time);
-
-        isFirstTry = false;
+        else { Heal(time); isFirstTry = false; }
     }
 
     public void Heal(float time)
