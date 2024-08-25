@@ -37,6 +37,7 @@ public class AudioManager : MonoBehaviour
         soundClip.Add("UI_Button", clipList[13]);
         soundClip.Add("Water_In", clipList[14]);
         soundClip.Add("Water_Out", clipList[15]);
+        soundClip.Add("Start_Siren", clipList[16]);
     }
 
     public void AudioPlay(string audioName)
