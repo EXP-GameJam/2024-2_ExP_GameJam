@@ -37,6 +37,7 @@ public class Gauge : MonoBehaviour
         truthMaxHP = truthMinHP + 5;
         isFail = false;
         isSuccess = false;
+        isFirstTry = true;
 
         PrintHP();
     }

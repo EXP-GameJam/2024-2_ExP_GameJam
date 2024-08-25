@@ -51,7 +51,7 @@ public class OnHeadClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public IEnumerator Timer()
     {
         isPaused = true;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         isPaused = false;
     }
 }

@@ -24,6 +24,11 @@ public class SpawnDialog : MonoBehaviour
     private void Awake()
     {
         OnHeadClick.HeadUp += HeadUp;
+        
+    }
+
+    private void Start()
+    {
         DialogManager.Instance.CreateDialog(dialogList[0]);
     }
 
