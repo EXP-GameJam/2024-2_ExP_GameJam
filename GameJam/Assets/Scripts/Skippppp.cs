@@ -5,21 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Skippppp : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Skipppppp()
     {
-        SceneManager.LoadScene("Main");
         AudioManager.Instance.SFXPlay("UI_Button");
+        CutSceneManager.Instance.fader.isCutSceneSkip = true;
+        CutSceneManager.Instance.fader.FadeOut(0.5f);
     }
 }

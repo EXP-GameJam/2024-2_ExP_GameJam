@@ -4,6 +4,7 @@ using TMPro;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Gauge : MonoBehaviour
 {
@@ -24,7 +25,10 @@ public class Gauge : MonoBehaviour
     {
         OnHeadClick.HeadDown += HeadDown;
         OnHeadClick.HeadUp += HeadUp;
+    }
 
+    private void Start()
+    {
         SetGauge();
     }
 
@@ -56,7 +60,7 @@ public class Gauge : MonoBehaviour
         }
     }
 
-    public void End() => SceneManager.LoadScene("EndingScene");
+    public void End() => OnHeadClick.End();
 
     public void PrintHP() => hpText.text = ((int)currentHP).ToString();
 

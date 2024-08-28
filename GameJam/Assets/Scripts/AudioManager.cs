@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class AudioManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
             return;
         }
 
@@ -49,6 +50,7 @@ public class AudioManager : MonoBehaviour
     public void AudioStop()
     {
         audioSource.Stop();
+        SFXSource.Stop();
     }
 
     public void SFXPlay(string SFXName)
@@ -58,7 +60,7 @@ public class AudioManager : MonoBehaviour
 
     public void ChangeVolume(float value)
     {
-        audioSource.volume = value * 0.5f;
+        audioSource.volume = value;
         SFXSource.volume = value;
     }
 }

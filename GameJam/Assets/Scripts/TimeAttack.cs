@@ -13,7 +13,9 @@ public class TimeAttack : MonoBehaviour
 
     public static bool isDisabled = false;
 
-    public void End() => SceneManager.LoadScene("EndingScene");
+    public Gauge gauge;
+
+    public void End() => gauge.End();
 
 
     private void Awake()

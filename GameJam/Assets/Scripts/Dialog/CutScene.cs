@@ -28,7 +28,7 @@ public class CutScene : MonoBehaviour, IPointerClickHandler
     {
         flowTime += Time.deltaTime;
 
-        if(flowTime >= autoSkipTime && !isSkipped)
+        if (flowTime >= autoSkipTime && !isSkipped)
         {
             Skip();
             isSkipped = true;
@@ -37,8 +37,7 @@ public class CutScene : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Click");
-        if(flowTime >= canSkipTime && !isSkipped)
+        if (flowTime >= canSkipTime && !isSkipped)
         {
             Skip();
             isSkipped = true;
@@ -47,7 +46,7 @@ public class CutScene : MonoBehaviour, IPointerClickHandler
 
     private void Start()
     {
-        if(isNowFade)
+        if (isNowFade)
         {
             CutSceneManager.Instance.fader.FadeIn(0.5f);
         }
@@ -55,7 +54,7 @@ public class CutScene : MonoBehaviour, IPointerClickHandler
 
     private void Skip()
     {
-        if(isNextFade)
+        if (isNextFade)
         {
             CutSceneManager.Instance.fader.FadeOut(0.5f);
         }

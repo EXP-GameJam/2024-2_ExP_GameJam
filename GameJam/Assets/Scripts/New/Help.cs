@@ -9,6 +9,8 @@ public class Help : MonoBehaviour
 
     public void HelpOpen()
     {
+        AudioManager.Instance.SFXPlay("UI_Button");
+        OnHeadClick.isPaused = true;
         Time.timeScale = 0f;
         HelpUI.SetActive(true);
     }
@@ -16,6 +18,8 @@ public class Help : MonoBehaviour
 
     public void HelpClose()
     {
+        AudioManager.Instance.SFXPlay("UI_Button");
+        OnHeadClick.isPaused = false;
         HelpUI.SetActive(false);
         Time.timeScale = 1f;
     }

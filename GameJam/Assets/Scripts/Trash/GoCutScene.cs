@@ -16,6 +16,7 @@ public class GoCutScene : MonoBehaviour, IPointerClickHandler
         BlackPanel.GetComponent<RectTransform>().transform.SetAsLastSibling();
         BlackPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
         fader = BlackPanel.AddComponent<FadeController>();
+        fader.FadeIn(0.5f);
     }
 
     public void OnPointerClick(PointerEventData eventData)

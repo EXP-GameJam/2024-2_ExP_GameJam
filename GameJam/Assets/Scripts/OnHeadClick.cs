@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class OnHeadClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -15,13 +16,28 @@ public class OnHeadClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public static bool isPaused = false;
     public static bool isDowned = false;
 
-    private void Awake()
+    public static FadeController fader;
+    public GameObject BlackPanel;
+
+    private void Start()
     {
+        BlackPanel.GetComponent<RectTransform>().transform.SetAsLastSibling();
+        BlackPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+        fader = BlackPanel.AddComponent<FadeController>();
+        fader.FadeIn(0.5f);
+
+        AudioManager.Instance.SFXPlay("Start_Siren");
         StartCoroutine(Timer());
     }
 
-    public static void Rese222()
+    public static void End() => fader.FadeOut(0.5f);
+
+    public static void ResetGame()
     {
+        TimeAttack.isDisabled = false;
+        isDisabled = false;
+        isPaused = false;
+        isDowned = false;
         HeadDown = null;
         HeadUp = null;
     }

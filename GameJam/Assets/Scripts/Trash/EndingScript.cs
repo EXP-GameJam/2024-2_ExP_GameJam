@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using static OnHeadClick;
 
 public class EndingScript : MonoBehaviour
 {
@@ -68,6 +67,7 @@ public class EndingScript : MonoBehaviour
 
     private void ShowResultImage()
     {
+        fader.isEndingButton = true;
         fader.FadeIn(0.5f);
         tmpText.gameObject.SetActive(false);
 
@@ -93,15 +93,9 @@ public class EndingScript : MonoBehaviour
 
     public void MainButton()
     {
-
-        TimeAttack.isDisabled = false;
-        OnHeadClick.isDisabled = false;
-        OnHeadClick.isPaused = false;
-        OnHeadClick.isDowned = false;
-        OnHeadClick.Rese222();
-
+        OnHeadClick.ResetGame();
         AudioManager.Instance.SFXPlay("UI_Button");
 
-        SceneManager.LoadScene("StartScene");
+        fader.FadeOut(0.5f);
     }
 }

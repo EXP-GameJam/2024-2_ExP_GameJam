@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class FadeController : MonoBehaviour
 {
+	public bool isCutSceneSkip = false;
+	public bool isEndingButton = false;
 	public void FadeIn(float fadeOutTime)
 	{
 		StartCoroutine(CoFadeIn(fadeOutTime));
@@ -55,16 +57,27 @@ public class FadeController : MonoBehaviour
 		string nowSceneName = SceneManager.GetActiveScene().name;
 		if (nowSceneName == "CutSceneLevel")
         {
-			CutSceneManager.Instance.ShowNextScene();
-			if(CutSceneManager.Instance.currentSceneIdx == 11)
+			if (isCutSceneSkip || CutSceneManager.Instance.currentSceneIdx == 10)
             {
+				isCutSceneSkip = false;
 				SceneManager.LoadScene("Main");
             }
-		}
+
+            else CutSceneManager.Instance.ShowNextScene();
+        }
 		else if(nowSceneName == "StartScene")
         {
 			AudioManager.Instance.AudioStop();
 			SceneManager.LoadScene("CutSceneLevel");
         }
-	}
+        else if (nowSceneName == "Main")
+        {
+            SceneManager.LoadScene("EndingScene");
+        }
+        else if (isEndingButton && nowSceneName == "EndingScene")
+        {
+			isEndingButton = false;
+            SceneManager.LoadScene("StartScene");
+        }
+    }
 }
