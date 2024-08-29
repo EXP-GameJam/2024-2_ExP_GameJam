@@ -1,4 +1,0 @@
-A	B	C	D	E	F
-1	2	3	Test.A	Test.B	True
-123123	1231231	1323123	Test.A	Test.C	True
-13123	123123	123123123	Test.B	Test.C	False

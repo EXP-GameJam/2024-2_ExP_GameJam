@@ -5,17 +5,17 @@ using TMPro.Examples;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogManager : MonoBehaviour
+public class C_DialogManager : MonoBehaviour
 {
-    private static DialogManager _instance;
+    private static C_DialogManager _instance;
 
-    public static DialogManager Instance
+    public static C_DialogManager Instance
     {
         get
         {
-            if(!_instance)
+            if (!_instance)
             {
-                _instance = FindObjectOfType(typeof(DialogManager)) as DialogManager;
+                _instance = FindObjectOfType(typeof(C_DialogManager)) as C_DialogManager;
 
                 if (_instance == null)
                     Debug.Log("No Singleton Object");
@@ -26,7 +26,7 @@ public class DialogManager : MonoBehaviour
 
     private void Awake()
     {
-        if(_instance == null)
+        if (_instance == null)
         {
             _instance = this;
         }
@@ -36,7 +36,7 @@ public class DialogManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        OnHeadClick.HeadDown += HeadDown;
+        C_OnHeadClick.HeadDown += HeadDown;
     }
 
 

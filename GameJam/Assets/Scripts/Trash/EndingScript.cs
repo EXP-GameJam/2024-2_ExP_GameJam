@@ -72,21 +72,25 @@ public class EndingScript : MonoBehaviour
         tmpText.gameObject.SetActive(false);
 
         EndingImageObject.SetActive(true);
-        returnButton.gameObject.SetActive(true);
 
         switch(EndingNum)
         {
             case 0:
                 AudioManager.Instance.AudioPlay("Ending_Siren");
+                returnButton.gameObject.SetActive(true);
                 break;
             case 1:
                 AudioManager.Instance.AudioPlay("Ending_Wasted");
+                returnButton.gameObject.SetActive(true);
                 break;
             case 2:
                 AudioManager.Instance.AudioPlay("Ending_Wave");
+                returnButton.gameObject.SetActive(true);
                 break;
             case 3:
                 AudioManager.Instance.SFXPlay("Ending_Spy");
+                fader.isCredit = true;
+                Invoke("Credit", 4);
                 break;
         }
     }
@@ -96,6 +100,13 @@ public class EndingScript : MonoBehaviour
         OnHeadClick.ResetGame();
         AudioManager.Instance.SFXPlay("UI_Button");
 
+        fader.FadeOut(0.5f);
+    }
+
+    public void Credit()
+    {
+        OnHeadClick.ResetGame();
+        C_OnHeadClick.ResetGame();
         fader.FadeOut(0.5f);
     }
 }

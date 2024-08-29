@@ -1,2 +1,0 @@
-dialogText	speechBubbleIdx	fontIdx	dialogVector	textDelay	isJitter
-test임	SpeechBubbleType.Normal	FontType.Hippy	2003, 2, 4	0.5	TRUE

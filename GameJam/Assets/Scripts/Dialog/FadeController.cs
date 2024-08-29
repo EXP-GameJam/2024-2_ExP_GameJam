@@ -8,6 +8,7 @@ public class FadeController : MonoBehaviour
 {
 	public bool isCutSceneSkip = false;
 	public bool isEndingButton = false;
+	public bool isCredit = false;
 	public void FadeIn(float fadeOutTime)
 	{
 		StartCoroutine(CoFadeIn(fadeOutTime));
@@ -74,9 +75,18 @@ public class FadeController : MonoBehaviour
         {
             SceneManager.LoadScene("EndingScene");
         }
+        else if (isCredit && nowSceneName == "EndingScene")
+        {
+            isCredit = false;
+            SceneManager.LoadScene("Credit");
+        }
         else if (isEndingButton && nowSceneName == "EndingScene")
         {
 			isEndingButton = false;
+            SceneManager.LoadScene("StartScene");
+        }
+		else if (nowSceneName == "Credit")
+		{
             SceneManager.LoadScene("StartScene");
         }
     }

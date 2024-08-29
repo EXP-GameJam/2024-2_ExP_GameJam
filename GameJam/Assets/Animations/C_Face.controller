@@ -11,9 +11,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: isHeadDown
     m_EventTreshold: 0
-  - m_ConditionMode: 4
-    m_ConditionEvent: HP
-    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: creditNum
+    m_EventTreshold: 10
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1716354071388323179}
   m_Solo: 0
@@ -39,12 +39,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: isHeadDown
     m_EventTreshold: 0
-  - m_ConditionMode: 3
-    m_ConditionEvent: HP
-    m_EventTreshold: 0
-  - m_ConditionMode: 4
-    m_ConditionEvent: HP
-    m_EventTreshold: 25
+  - m_ConditionMode: 6
+    m_ConditionEvent: creditNum
+    m_EventTreshold: 9
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2800554048952188383}
   m_Solo: 0
@@ -248,7 +245,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Face
+  m_Name: C_Face
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isHeadDown
@@ -256,13 +253,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: HP
-    m_Type: 1
-    m_DefaultFloat: 100
+    m_Controller: {fileID: 0}
+  - m_Name: creditNum
+    m_Type: 3
+    m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -397,11 +394,11 @@ AnimatorStateTransition:
     m_ConditionEvent: isHeadDown
     m_EventTreshold: 0
   - m_ConditionMode: 3
-    m_ConditionEvent: HP
-    m_EventTreshold: 25
+    m_ConditionEvent: creditNum
+    m_EventTreshold: 5
   - m_ConditionMode: 4
-    m_ConditionEvent: HP
-    m_EventTreshold: 50
+    m_ConditionEvent: creditNum
+    m_EventTreshold: 9
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2652624667012408529}
   m_Solo: 0
@@ -494,8 +491,11 @@ AnimatorStateTransition:
     m_ConditionEvent: isHeadDown
     m_EventTreshold: 0
   - m_ConditionMode: 3
-    m_ConditionEvent: HP
-    m_EventTreshold: 75
+    m_ConditionEvent: creditNum
+    m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: creditNum
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2957157224132626780}
   m_Solo: 0
@@ -522,11 +522,11 @@ AnimatorStateTransition:
     m_ConditionEvent: isHeadDown
     m_EventTreshold: 0
   - m_ConditionMode: 3
-    m_ConditionEvent: HP
-    m_EventTreshold: 50
+    m_ConditionEvent: creditNum
+    m_EventTreshold: 2
   - m_ConditionMode: 4
-    m_ConditionEvent: HP
-    m_EventTreshold: 75
+    m_ConditionEvent: creditNum
+    m_EventTreshold: 6
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4229901299302722790}
   m_Solo: 0
