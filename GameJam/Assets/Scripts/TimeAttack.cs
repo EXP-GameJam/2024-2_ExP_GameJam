@@ -20,7 +20,7 @@ public class TimeAttack : MonoBehaviour
 
     private void Awake()
     {
-        StartCoroutine(Timer());
+        //StartCoroutine(Timer());
     }
 
     public static void Disable() => isDisabled = true;
